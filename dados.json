@@ -2,7 +2,7 @@
     {
         "id": "1",
         "nome": "Tony Tony Chopper (One Piece)",
-        "url_imagem": "https://i.ibb.co/7XvXzTj/placeholder-chopper.jpg"
+        "url_imagem": "https://i.ibb.co/1fqKPbKB/fccd145277b1bf64a891e62c98a14538.jpg"
     },
     {
         "id": "2",
@@ -18,5 +18,10 @@
         "id": "4",
         "nome": "Naruto Uzumaki",
         "url_imagem": "https://placehold.co/600x800/FF5722/white?text=Naruto+Papercraft"
+    },
+     {
+        "id": "5",
+        "nome": "kakashi",
+        "url_imagem": "https://i.ibb.co/N2FB5bpt/d6be1f9f1387832ece557007477507a2.jpg"
     }
 ]
