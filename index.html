@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Papercraft</title>
+    <!-- Importando Tailwind CSS para o visual -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importando fonte amigável do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Importando ícones -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f3f4f6; /* Fundo cinza bem claro */
+        }
+        /* Efeito de carregamento para imagens */
+        .image-loading {
+            background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Cabeçalho -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-8 px-4 shadow-lg">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-black mb-2 flex items-center justify-center gap-3">
+                <i data-lucide="scissors"></i>
+                Mundo do Papercraft
+            </h1>
+            <p class="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto">
+                Baixe, imprima, recorte e monte seus personagens favoritos. Uma coleção completa de artes em papel!
+            </p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-10 w-full">
+        
+        <!-- Barra de pesquisa (opcional, já deixei pronta visualmente) -->
+        <div class="mb-8 max-w-md mx-auto">
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i data-lucide="search" class="text-gray-400 w-5 h-5"></i>
+                </div>
+                <input type="text" id="searchInput" placeholder="Buscar personagem..." class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-full leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out shadow-sm">
+            </div>
+        </div>
+
+        <!-- Grid onde os bonecos vão aparecer -->
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Os cards serão gerados aqui pelo JavaScript -->
+        </div>
+
+        <!-- Mensagem caso a pesquisa não encontre nada -->
+        <div id="no-results" class="hidden text-center py-10">
+            <i data-lucide="frown" class="mx-auto h-12 w-12 text-gray-400 mb-3"></i>
+            <h3 class="text-lg font-medium text-gray-900">Nenhum boneco encontrado</h3>
+            <p class="text-gray-500">Tente pesquisar por outro nome.</p>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-gray-300 py-6 text-center">
+        <p>© 2026 Mundo do Papercraft. Divirta-se montando!</p>
+    </footer>
+
+    <!-- Lógica JavaScript -->
+    <script>
+        // Inicializa os ícones do Lucide
+        lucide.createIcons();
+
+        // Variável vazia que vai guardar os dados carregados do JSON
+        let papercraftData = []; 
+
+        const galleryGrid = document.getElementById('gallery-grid');
+        const searchInput = document.getElementById('searchInput');
+        const noResults = document.getElementById('no-results');
+
+        // Função para renderizar os cards na tela
+        function renderGallery(data) {
+            galleryGrid.innerHTML = ''; // Limpa a galeria atual
+            
+            if (data.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-2xl shadow-md overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col border border-gray-100";
+                
+                // Estrutura HTML de cada cardzinho
+                card.innerHTML = `
+                    <div class="relative h-64 sm:h-72 w-full bg-gray-100 flex items-center justify-center overflow-hidden p-4">
+                        <img 
+                            src="${item.url_imagem}" 
+                            alt="${item.nome}" 
+                            class="max-w-full max-h-full object-contain drop-shadow-md transition duration-500 hover:scale-105"
+                            onerror="this.src='https://placehold.co/600x800/eeeeee/999999?text=Imagem+Indisponível'"
+                        >
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between border-t border-gray-100">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4 text-center leading-tight">${item.nome}</h2>
+                        
+                        <button 
+                            onclick="downloadImage('${item.url_imagem}', '${item.nome}')" 
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center gap-2 active:scale-95 shadow-sm hover:shadow"
+                        >
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            Baixar Arte
+                        </button>
+                    </div>
+                `;
+                galleryGrid.appendChild(card);
+            });
+            
+            // Re-renderiza os ícones gerados dinamicamente
+            lucide.createIcons();
+        }
+
+        // Função avançada para forçar o download da imagem ao invés de apenas abrir em outra aba
+        async function downloadImage(url, fileName) {
+            // Se for uma imagem do placehold.co (usada de exemplo), apenas abre para evitar erro de CORS
+            if(url.includes('placehold.co')) {
+                window.open(url, '_blank');
+                return;
+            }
+
+            try {
+                // Tenta buscar a imagem para forçar o download local
+                const response = await fetch(url);
+                if (!response.ok) throw new Error("Erro na rede");
+                
+                const blob = await response.blob();
+                const blobUrl = window.URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.href = blobUrl;
+                // Formata o nome do arquivo (ex: "tony_tony_chopper.jpg")
+                a.download = fileName.toLowerCase().replace(/[^a-z0-9]/g, '_') + '.jpg';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(blobUrl);
+            } catch (error) {
+                console.log("CORS impediu o download direto, abrindo em nova aba...", error);
+                // Fallback: Se o ImgBB bloquear o fetch (CORS), apenas abre a imagem numa nova aba para a pessoa salvar.
+                window.open(url, '_blank');
+            }
+        }
+
+        // Sistema de Busca em tempo real
+        searchInput.addEventListener('input', (e) => {
+            const termo = e.target.value.toLowerCase();
+            const dadosFiltrados = papercraftData.filter(item => 
+                item.nome.toLowerCase().includes(termo)
+            );
+            renderGallery(dadosFiltrados);
+        });
+
+        // Função para carregar o arquivo dados.json da mesma pasta
+        async function carregarDados() {
+            try {
+                // Tenta buscar o arquivo externo
+                const resposta = await fetch('dados.json');
+                
+                if (!resposta.ok) {
+                    throw new Error('Arquivo dados.json não encontrado.');
+                }
+                
+                // Converte a resposta para um array do JavaScript
+                papercraftData = await resposta.json();
+                
+                // Renderiza a galeria com os dados que chegaram
+                renderGallery(papercraftData);
+                
+            } catch (erro) {
+                console.error("Erro ao carregar dados:", erro);
+                galleryGrid.innerHTML = `
+                    <div class="col-span-full text-center py-10 bg-white rounded-xl shadow p-6">
+                        <i data-lucide="alert-triangle" class="mx-auto w-12 h-12 text-red-500 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Erro ao carregar as artes</h3>
+                        <p class="text-gray-600 max-w-md mx-auto">
+                            Para que o navegador consiga ler o arquivo <b>dados.json</b>, você precisa abrir este site usando um servidor local (como a extensão <i>Live Server</i> no VS Code) ou hospedá-mo em um servidor web real.
+                        </p>
+                    </div>
+                `;
+                lucide.createIcons();
+            }
+        }
+
+        // Inicia o carregamento assim que a página é aberta
+        carregarDados();
+
+    </script>
+</body>
+</html>
