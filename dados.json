@@ -7,7 +7,7 @@
     {
         "id": "2",
         "nome": "Luffy - Modelo Básico",
-        "url_imagem": "https://i.pinimg.com/236x/af/de/36/afde36d10cbb50905ec72892e61e29e3.jpg"
+        "url_imagem": "https://i.ibb.co/XfTQ57Sn/afde36d10cbb50905ec72892e61e29e3.jpg"
     },
     {
         "id": "3",
@@ -23,5 +23,35 @@
         "id": "5",
         "nome": "kakashi",
         "url_imagem": "https://i.ibb.co/N2FB5bpt/d6be1f9f1387832ece557007477507a2.jpg"
+    },
+    {
+        "id": "6",
+        "nome": "Usopp",
+        "url_imagem": "https://i.ibb.co/9kMZtG7P/8ae4d2a9f07cbc5c98edbc413388c646.jpg"
+    },
+    {
+        "id": "7",
+        "nome": "nami",
+        "url_imagem": "https://i.ibb.co/ch0F6f0V/6929b4378806a6d128854a6b258512b7.jpg"
+    },
+    {
+        "id": "8",
+        "nome": "Sanji",
+        "url_imagem": "https://i.ibb.co/vxgKbffN/ec30b946746e4e864ca77f31efa019e2.jpg"
+    },
+    {
+        "id": "9",
+        "nome": "Nico Robin",
+        "url_imagem": "https://i.ibb.co/kgNZDN4K/239a356e76bf5b0fd4f56f7c811833b2.jpg"
+    },
+    {
+        "id": "10",
+        "nome": "Franky",
+        "url_imagem": "https://i.ibb.co/9H8D9jW1/704592ab2bc6bcacbb6e889079bd5703.jpg"
+    },
+    {
+        "id": "11",
+        "nome": "Brook",
+        "url_imagem": "https://i.ibb.co/Zz4JbnKM/15d1d1747305998e51462e358e28514f.jpg"
     }
 ]
