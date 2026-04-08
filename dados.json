@@ -1,57 +1,112 @@
 [
-    {
-        "id": "1",
-        "nome": "Chopper",
-        "url_imagem": "https://i.ibb.co/1fqKPbKB/fccd145277b1bf64a891e62c98a14538.jpg"
-    },
-    {
-        "id": "2",
-        "nome": "Luffy - Modelo Básico",
-        "url_imagem": "https://i.ibb.co/XfTQ57Sn/afde36d10cbb50905ec72892e61e29e3.jpg"
-    },
-    {
-        "id": "3",
-        "nome": "Zoro - Espadachim",
-        "url_imagem": "https://i.ibb.co/fYHmmMQz/1-v-1.jpg"
-    },
-    {
-        "id": "4",
-        "nome": "Naruto Uzumaki",
-        "url_imagem": "https://i.ibb.co/mgrDHmc/51aa-Q174p-IL.jpg"
-    },
-     {
-        "id": "5",
-        "nome": "kakashi",
-        "url_imagem": "https://i.ibb.co/N2FB5bpt/d6be1f9f1387832ece557007477507a2.jpg"
-    },
-    {
-        "id": "6",
-        "nome": "Usopp",
-        "url_imagem": "https://i.ibb.co/9kMZtG7P/8ae4d2a9f07cbc5c98edbc413388c646.jpg"
-    },
-    {
-        "id": "7",
-        "nome": "nami",
-        "url_imagem": "https://i.ibb.co/ch0F6f0V/6929b4378806a6d128854a6b258512b7.jpg"
-    },
-    {
-        "id": "8",
-        "nome": "Sanji",
-        "url_imagem": "https://i.ibb.co/vxgKbffN/ec30b946746e4e864ca77f31efa019e2.jpg"
-    },
-    {
-        "id": "9",
-        "nome": "Nico Robin",
-        "url_imagem": "https://i.ibb.co/kgNZDN4K/239a356e76bf5b0fd4f56f7c811833b2.jpg"
-    },
-    {
-        "id": "10",
-        "nome": "Franky",
-        "url_imagem": "https://i.ibb.co/9H8D9jW1/704592ab2bc6bcacbb6e889079bd5703.jpg"
-    },
-    {
-        "id": "11",
-        "nome": "Brook",
-        "url_imagem": "https://i.ibb.co/Zz4JbnKM/15d1d1747305998e51462e358e28514f.jpg"
-    }
+  {
+    "id": "1",
+    "nome": "Monkey D. Luffy",
+    "url_imagem": "https://i.ibb.co/XfTQ57Sn/afde36d10cbb50905ec72892e61e29e3.jpg"
+  },
+  {
+    "id": "2",
+    "nome": "Roronoa Zoro",
+    "url_imagem": "https://i.ibb.co/fYHmmMQz/1-v-1.jpg"
+  },
+  {
+    "id": "3",
+    "nome": "Nico Robin",
+    "url_imagem": "https://i.ibb.co/kgNZDN4K/239a356e76bf5b0fd4f56f7c811833b2.jpg"
+  },
+  {
+    "id": "4",
+    "nome": "Gol D. Roger",
+    "url_imagem": ""
+  },
+  {
+    "id": "5",
+    "nome": "Shanks",
+    "url_imagem": ""
+  },
+  {
+    "id": "6",
+    "nome": "Silvers Rayleigh",
+    "url_imagem": ""
+  },
+  {
+    "id": "7",
+    "nome": "Marshall D. Teach (Barba Negra)",
+    "url_imagem": ""
+  },
+  {
+    "id": "8",
+    "nome": "Akainu (Sakazuki)",
+    "url_imagem": ""
+  },
+  {
+    "id": "9",
+    "nome": "Imu-sama",
+    "url_imagem": ""
+  },
+  {
+    "id": "10",
+    "nome": "Monkey D. Dragon",
+    "url_imagem": ""
+  },
+  {
+    "id": "11",
+    "nome": "Sabo",
+    "url_imagem": ""
+  },
+  {
+    "id": "12",
+    "nome": "Portgas D. Ace",
+    "url_imagem": ""
+  },
+  {
+    "id": "13",
+    "nome": "Dr. Vegapunk",
+    "url_imagem": ""
+  },
+  {
+    "id": "14",
+    "nome": "Trafalgar Law",
+    "url_imagem": ""
+  },
+  {
+    "id": "15",
+    "nome": "Nefertari Vivi",
+    "url_imagem": ""
+  },
+  {
+    "id": "16",
+    "nome": "Usopp",
+    "url_imagem": "https://i.ibb.co/9kMZtG7P/8ae4d2a9f07cbc5c98edbc413388c646.jpg"
+  },
+  {
+    "id": "17",
+    "nome": "Nami",
+    "url_imagem": "https://i.ibb.co/ch0F6f0V/6929b4378806a6d128854a6b258512b7.jpg"
+  },
+  {
+    "id": "18",
+    "nome": "Sanji",
+    "url_imagem": "https://i.ibb.co/vxgKbffN/ec30b946746e4e864ca77f31efa019e2.jpg"
+  },
+  {
+    "id": "19",
+    "nome": "Chopper",
+    "url_imagem": "https://i.ibb.co/1fqKPbKB/fccd145277b1bf64a891e62c98a14538.jpg"
+  },
+  {
+    "id": "20",
+    "nome": "Franky",
+    "url_imagem": "https://i.ibb.co/9H8D9jW1/704592ab2bc6bcacbb6e889079bd5703.jpg"
+  },
+  {
+    "id": "21",
+    "nome": "Brook",
+    "url_imagem": "https://i.ibb.co/Zz4JbnKM/15d1d1747305998e51462e358e28514f.jpg"
+  },
+  {
+    "id": "22",
+    "nome": "Jinbe",
+    "url_imagem": ""
+  }
 ]
