@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "nome": "Tony Tony Chopper (One Piece)",
+        "url_imagem": "https://i.ibb.co/7XvXzTj/placeholder-chopper.jpg"
+    },
+    {
+        "id": "2",
+        "nome": "Luffy - Modelo Básico",
+        "url_imagem": "https://placehold.co/600x800/ff9900/white?text=Luffy+Papercraft"
+    },
+    {
+        "id": "3",
+        "nome": "Zoro - Espadachim",
+        "url_imagem": "https://placehold.co/600x800/4CAF50/white?text=Zoro+Papercraft"
+    },
+    {
+        "id": "4",
+        "nome": "Naruto Uzumaki",
+        "url_imagem": "https://placehold.co/600x800/FF5722/white?text=Naruto+Papercraft"
+    }
+]
